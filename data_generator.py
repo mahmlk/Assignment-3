@@ -56,10 +56,10 @@ class DataGeneratorUnet(keras.utils.Sequence):
             # Implement data augmentation function
             # We are using Albumentations for the augmentation task
             transform = A.Compose([
-                A.RandomCrop(width=256, height=256),
+                A.RandomCrop(width=512, height=512),
                 A.HorizontalFlip(p=0.5),
-                A.RandomBrightnessContrast(p=1),
-                A.Rotate (limit=90, interpolation=1, p=1),
+                A.RandomBrightnessContrast(p=0.5),
+                A.Rotate (limit=90, interpolation=0.5, p=0.5),
                 ])
 
 
